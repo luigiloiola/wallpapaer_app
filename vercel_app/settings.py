@@ -29,15 +29,19 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
-
 INSTALLED_APPS = [
+    'groups',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'example'
+    'wallpaperApp',
+    'example',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +80,12 @@ WSGI_APPLICATION = 'vercel_app.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 
-DATABASES = {}
-
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
