@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'wallpaperApp',
     'example',
-
     'rest_framework',
 ]
 
