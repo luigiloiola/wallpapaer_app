@@ -4,5 +4,5 @@ from django.contrib.auth.models import User
 
 class Group(models.Model):
     createdBy = models.ForeignKey(User, on_delete=models.CASCADE)
-    currentWallpaper = models.CharField(max_length=300, blank=True, null=True, default=None);
+    currentWallpaper = models.CharField(max_length=255, blank=True, null=True)
     # Adicione outros campos conforme necessário
