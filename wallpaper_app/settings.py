@@ -90,12 +90,17 @@ WSGI_APPLICATION = 'wallpaper_app.wsgi.app'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DATABASE'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('POSTGRES_HOST'),
-        'PORT': '5432',  # O valor padrão para a porta PostgreSQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+CHANNEL_LAYERS = {
+    "default":{
+        "BACKEND":"channels_redis.core.RedisChannelLayers",
+        "CONFIG":{
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        }
     }
 }
 # Password validation
