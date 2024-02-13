@@ -16,6 +16,10 @@ class WallpaperConsumer(WebsocketConsumer):
         )
 
         self.accept()
+        self.send(text_data=json.dumps(
+            'type:connection_established',
+            'message:connected'
+        ))
 
     def disconnect(self, close_code):
         # Chamado quando o WebSocket é fechado por algum motivo
