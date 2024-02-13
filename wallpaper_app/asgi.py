@@ -1,5 +1,5 @@
 """
-ASGI config for vercel_app project.
+ASGI config for wallpaper_app project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -15,7 +15,7 @@ from django.urls import re_path, path
 from . import consumers
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'vercel_app.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wallpaper_app.settings')
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
