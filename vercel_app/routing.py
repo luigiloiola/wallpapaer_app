@@ -11,9 +11,7 @@ application = ProtocolTypeRouter({
         URLRouter(
             [
                 re_path(r"ws/loiola-app.vercel.app/<str:room_name>/", consumers.WallpaperConsumer.as_asgi()),
-
             ]
         )
     ),
-    "http":get_asgi_application(),
 })
