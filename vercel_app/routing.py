@@ -7,6 +7,7 @@ from . import consumers
 
 
 application = ProtocolTypeRouter({
+    "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
         URLRouter(
             [
@@ -14,5 +15,4 @@ application = ProtocolTypeRouter({
             ]
         )
     ),
-    "http":get_asgi_application(),
 })
