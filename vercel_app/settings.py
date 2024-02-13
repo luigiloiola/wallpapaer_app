@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
 
 # Application definition
 INSTALLED_APPS = [
+    'channels',
     'groups',
     'users',
     'django.contrib.admin',
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'example',
     'rest_framework',
 ]
+
+ASGI_APPLICATION = 'vercel_app.asgi.application'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
