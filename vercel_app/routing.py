@@ -10,7 +10,7 @@ application = ProtocolTypeRouter({
     "websocket": AuthMiddlewareStack(
         URLRouter(
             [
-                re_path(r"ws/wallpaper/<str:room_name>/", consumers.WallpaperConsumer.as_asgi()),
+                re_path(r"ws/loiola-app.vercel.app/<str:room_name>/", consumers.WallpaperConsumer.as_asgi()),
 
             ]
         )
