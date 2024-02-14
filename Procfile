@@ -1,2 +1,2 @@
 release: python3 manage.py migrate
-web: daphne -u 8000 wallpaper_app.asgi:application
+web: daphne wallpaper_app.wsgi:application --port $PORT --bind 0.0.0.0 -v2
