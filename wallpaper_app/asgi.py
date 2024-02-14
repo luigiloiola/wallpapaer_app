@@ -23,7 +23,7 @@ application = ProtocolTypeRouter({
     "websocket": AuthMiddlewareStack(
         URLRouter(
             [
-                path(r"ws/<str:room_name>/", consumers.WallpaperConsumer.as_asgi()),
+                re_path(r"ws/<str:room_name>/", consumers.WallpaperConsumer.as_asgi()),
             ]
         )
     ),
