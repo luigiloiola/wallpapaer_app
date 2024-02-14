@@ -6,7 +6,7 @@ from channels.generic.websocket import WebsocketConsumer
 class WallpaperConsumer(WebsocketConsumer):
     def connect(self):
         # Chamado quando o websocket é mão de obra
-        self.room_name = self.scope['url_route']['room_name']
+        self.room_name = self.scope['url_route']['kwargs']['room_name']
         self.room_group_name = f"wallpaper_{self.room_name}"
 
         # Junte-se ao grupo
