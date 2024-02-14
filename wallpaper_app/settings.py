@@ -102,9 +102,8 @@ if IS_HEROKU_APP:
     # automatically by Heroku when a database addon is attached to your Heroku app. See:
     # https://devcenter.heroku.com/articles/provisioning-heroku-postgres
     # https://github.com/jazzband/dj-database-url
-    DATABASES = {
-        "default": dj_database_url
-    }
+    DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+
 else:
     # When running locally in development or in CI, a sqlite database file will be used instead
     # to simplify initial setup. Longer term it's recommended to use Postgres locally too.
