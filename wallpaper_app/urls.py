@@ -31,7 +31,7 @@ router.register(r'userprofiles', UserProfileViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/login/', LoginView.as_view(), name='login')
+    path('login/', LoginView.as_view(), name='login')
 ]
 # add at the last
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
